@@ -23,5 +23,15 @@ module Types
     def products
       Product.all
     end
+
+    field :product, Types::ProductType, null: true do
+      argument :id, ID, required: true
+    end
+
+    def product(id:)
+      Product.find(id)
+    rescue ActiveRecord::RecordNotFound
+      raise GraphQL::ExecutionError, "Product with id #{id} not found"
+    end
   end
 end
