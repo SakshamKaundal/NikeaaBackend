@@ -33,5 +33,11 @@ module Types
     rescue ActiveRecord::RecordNotFound
       raise GraphQL::ExecutionError, "Product with id #{id} not found"
     end
+
+    field :cart, Types::CartType, null: true
+
+    def cart
+      Cart.first
+    end
   end
 end
