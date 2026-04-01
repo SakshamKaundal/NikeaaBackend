@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'graphql', '~> 2.0'
 gem 'graphiql-rails'
 
+# CORS
+gem 'rack-cors'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
